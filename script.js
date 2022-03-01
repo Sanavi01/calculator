@@ -17,10 +17,12 @@ const btnSubtract = document.querySelector(".buttonSubtract")
 const btnMultiply = document.querySelector(".buttonMultiply")
 const btnDivide = document.querySelector(".buttonDivide")
 const btnCe = document.querySelector(".buttonClean")
+const btnEqual = document.querySelector(".buttonEqual")
 
-
+/*
 function add(a, b) {
     let resultAdd = Number(a) + Number(b)
+    a = resultAdd
     console.log(resultAdd)
 }
 
@@ -58,57 +60,73 @@ function operate(a, b, operator) {
     }
 
 }
-
-whatoperate = 0
-
+*/
 function display() {
     btnNine.addEventListener('click', () => {
-        accumulator.append(9)
+        accumulator.textContent = accumulator.textContent + 9 
+        result.textContent = eval(accumulator.textContent)
     })
     btnEight.addEventListener('click', () => {
-        accumulator.append(8)
+        accumulator.textContent = accumulator.textContent + 8 
+        result.textContent = eval(accumulator.textContent)
     })
     btnSeven.addEventListener('click', () => {
-        accumulator.append(7)
+        accumulator.textContent = accumulator.textContent + 7 
+        result.textContent = eval(accumulator.textContent)
     })
     btnSix.addEventListener('click', () => {
-        accumulator.append(6)
+        accumulator.textContent = accumulator.textContent + 6 
+        result.textContent = eval(accumulator.textContent)
     })
     btnFive.addEventListener('click', () => {
-        accumulator.append(5)
+        accumulator.textContent = accumulator.textContent + 5 
+        result.textContent = eval(accumulator.textContent)
     })
     btnFour.addEventListener('click', () => {
-        accumulator.append(4)
+        accumulator.textContent = accumulator.textContent + 4 
+        result.textContent = eval(accumulator.textContent)
     })
     btnThree.addEventListener('click', () => {
-        accumulator.append(3)
+        accumulator.textContent = accumulator.textContent + 3 
+        result.textContent = eval(accumulator.textContent)
     })
     btnTwo.addEventListener('click', () => {
-        accumulator.append(2)
+        accumulator.textContent = accumulator.textContent + 2 
+        result.textContent = eval(accumulator.textContent)
     })
     btnOne.addEventListener('click', () => {
-        accumulator.append(1)
+        accumulator.textContent = accumulator.textContent + 1 
+        result.textContent = eval(accumulator.textContent)
     })
     btnZero.addEventListener('click', () => {
-        accumulator.append(0)
+        accumulator.textContent = accumulator.textContent + 0
+        result.textContent = eval(accumulator.textContent) 
     })
     btnPoint.addEventListener('click', () => {
-        accumulator.append(".")
+        accumulator.textContent = accumulator.textContent + "."
     })
     btnAdd.addEventListener('click', () => {
-        accumulator.append("+")
+        accumulator.textContent = accumulator.textContent + "+"
     })
     btnSubtract.addEventListener('click', () => {
-        accumulator.append("-")
+        accumulator.textContent = accumulator.textContent + "-"
     })
     btnMultiply.addEventListener('click', () => {
-        accumulator.append("*")
+        accumulator.textContent = accumulator.textContent + "*"
     })
     btnDivide.addEventListener('click', () => {
-        accumulator.append("/")
+        accumulator.textContent = accumulator.textContent + "/"
     })
     btnCe.addEventListener('click', () => {
         accumulator.textContent = ""
+        result.textContent = eval(accumulator.textContent)
+
     })
+    btnEqual.addEventListener('click', () => {
+        result.textContent = eval(accumulator.textContent)
+        accumulator.textContent = result.textContent
+    })
+
 }
+
 display();
