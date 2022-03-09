@@ -18,6 +18,7 @@ const btnMultiply = document.querySelector(".buttonMultiply")
 const btnDivide = document.querySelector(".buttonDivide")
 const btnCe = document.querySelector(".buttonClean")
 const btnEqual = document.querySelector(".buttonEqual")
+const btnDe = document.querySelector(".buttonDelete")
 
 /*
 function add(a, b) {
@@ -96,11 +97,11 @@ function display() {
     })
     btnOne.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 1 
-        result.textContent = eval(accumulator.textContent)
+        result.textContent = parseFloat(eval(accumulator.textContent))
     })
     btnZero.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 0
-        result.textContent = eval(accumulator.textContent) 
+        result.textContent = parseFloat(eval(accumulator.textContent))
     })
     btnPoint.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + "."
@@ -120,7 +121,6 @@ function display() {
     btnCe.addEventListener('click', () => {
         accumulator.textContent = ""
         result.textContent = eval(accumulator.textContent)
-
     })
     btnEqual.addEventListener('click', () => {
         result.textContent = eval(accumulator.textContent)
