@@ -62,69 +62,135 @@ function operate(a, b, operator) {
 
 }
 */
+
+let a = ""
+let b  = ""
+let c= ""
 function display() {
     btnNine.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 9 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "9" 
     })
     btnEight.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 8 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "8" 
     })
     btnSeven.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 7 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "7" 
     })
     btnSix.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 6 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "6" 
     })
     btnFive.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 5 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "5" 
     })
     btnFour.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 4 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "4" 
     })
     btnThree.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 3 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "3" 
     })
     btnTwo.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 2 
-        result.textContent = eval(accumulator.textContent)
+        a = a + "2" 
     })
     btnOne.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 1 
-        result.textContent = parseFloat(eval(accumulator.textContent))
+        a = a + "1"
     })
     btnZero.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + 0
-        result.textContent = parseFloat(eval(accumulator.textContent))
+        a = a + "0" 
     })
     btnPoint.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + "."
+        a = a + "." 
     })
     btnAdd.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + "+"
+        if( a == 0){
+            a = "+"
+            b = b + a
+            a = 0    
+        } else {
+            a = parseInt(a)
+            a = a + "+" 
+            b = b + a
+            a = 0  
+        }
     })
     btnSubtract.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + "-"
+        if( a == 0){
+            a = "-"
+            b = b + a
+            a = 0    
+        } else {
+            a = parseInt(a)
+            a = a + "-" 
+            b = b + a
+            a = 0  
+        }
     })
     btnMultiply.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + "*"
+        if( a == 0){
+            a = "*"
+            b = b + a
+            a = 0    
+        } else {
+            a = parseInt(a)
+            a = a + "*" 
+            b = b + a
+            a = 0  
+        }
     })
     btnDivide.addEventListener('click', () => {
         accumulator.textContent = accumulator.textContent + "/"
+        if( a == 0){
+            a = "/"
+            b = b + a
+            a = 0    
+        } else {
+            a = parseInt(a)
+            a = a + "/" 
+            b = b + a
+            a = 0  
+        }
     })
     btnCe.addEventListener('click', () => {
         accumulator.textContent = ""
-        result.textContent = eval(accumulator.textContent)
+        a = ""
+        b = ""
+        c = ""
+        result.textContent = ""
     })
     btnEqual.addEventListener('click', () => {
-        result.textContent = eval(accumulator.textContent)
-        accumulator.textContent = result.textContent
+        if (a == 0) {
+            b = b 
+        } else {
+            a = parseInt(a)
+            b = b + a
+            c = eval(b)
+            a = 0
+            result.textContent = c
+        }
+        
+    })
+    btnDe.addEventListener('click', () => {
+        accumulator.textContent = accumulator.textContent.slice(0, -1)
+        if(a.length > 0){
+            aDe = a.slice(0 ,-1)
+            a = aDe
+        } else {
+            bDe = b.slice(0, -1)
+            b = bDe
+        }
     })
 
 }
